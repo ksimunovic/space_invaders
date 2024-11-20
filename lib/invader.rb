@@ -20,7 +20,4 @@ class Invader
   def rows
     array.length
   end
-
-  def offset_position
-  end
 end
