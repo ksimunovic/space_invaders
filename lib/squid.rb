@@ -2,11 +2,11 @@
 
 class Squid < Invader
   PATTERN = "--o-----o--
-     ---o---o---
-     --ooooooo--
-     -oo-ooo-oo-
-     ooooooooooo
-     o-ooooooo-o
-     o-o-----o-o
-     ---oo-oo---".delete(" ")
+             ---o---o---
+             --ooooooo--
+             -oo-ooo-oo-
+             ooooooooooo
+             o-ooooooo-o
+             o-o-----o-o
+             ---oo-oo---".delete(" ")
 end
