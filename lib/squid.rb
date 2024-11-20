@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "invader"
+
 class Squid < Invader
   PATTERN = "--o-----o--
              ---o---o---

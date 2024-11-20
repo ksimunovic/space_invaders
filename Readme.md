@@ -91,3 +91,24 @@ o-----oo-------------------o--o-----o-----------o------o-------o----o-----------
 o--oo------o-----oo--o-oo------------oo--o------o--o-------------oo----o------------oooo-o------oo--
 -----o----------ooooooooo--------------oo--------------oo-----o-----o-o--o------o----------o----o---
 ~~~~
+
+------
+## Requirements
+- Ruby 3.3.5+
+
+## Setup
+```bash
+bundle install
+```
+
+## Usage
+Run from CLI:
+```bash
+ruby lib/run_radar.rb spec/fixtures/official_grid.txt
+```
+
+## Testing
+Run tests using:
+```bash
+bundle exec rspec
+```
