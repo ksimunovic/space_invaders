@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RadarSample
+class RadarGrid
   attr_reader :array
 
   def initialize(sample)
