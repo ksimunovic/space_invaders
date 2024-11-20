@@ -19,7 +19,7 @@ RSpec.describe Radar do
     end
   end
 
-  describe "partial end-match detection" do
+  describe "partial end-match detection left side" do
     let(:radar) { described_class.new }
     let(:radar_sample) {
       "o---------
@@ -34,6 +34,24 @@ RSpec.describe Radar do
 
     it "detects invader at starting position" do
       expect { radar.scan(radar_sample) }.to output("(0,0)\n").to_stdout
+    end
+  end
+
+  describe "partial end-match detection right side" do
+    let(:radar) { described_class.new }
+    let(:radar_sample) {
+      "------ooo
+       -----oooo
+       ----oo-oo
+       ----ooooo
+       ------o--
+       -----o-oo
+       ----o-o--
+       ---------".delete(" ")
+    }
+
+    it "detects invader at starting position " do
+      expect { radar.scan(radar_sample) }.to output("(0,1)\n").to_stdout
     end
   end
 
