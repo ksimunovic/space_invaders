@@ -10,11 +10,12 @@ if ARGV.empty?
 end
 
 sample_file = ARGV[0]
+match_percentages = ARGV[1]&.split(",")&.map(&:to_i) || [90, 75, 55, 30]
 
 if File.exist?(sample_file)
   sample_text = File.read(sample_file)
   radar = Radar.new
-  radar.scan(sample_text)
+  radar.scan(sample_text, match_percentages)
 else
   puts "File not found: #{sample_file}"
 end

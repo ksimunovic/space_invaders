@@ -3,29 +3,28 @@
 class Radar
   MATCH_THRESHOLD = 50 # Percentage to determine valid match passes
   POSITION_OFFSET = 75 # Percentage offset for scanning positions
-  MATCH_PERCENTAGES = [90, 75, 55, 30].freeze # Varying match percentages for detection
   CHARS_MATCHED_THRESHOLD = 15 # Minimal number of matched characters for detection
 
   def invaders
     [Crab, Squid]
   end
 
-  def scan(sample)
+  def scan(sample, match_percentages = [90, 75, 55, 30])
     grid = RadarGrid.new(sample)
 
     invaders.each do |invader_class|
       invader = invader_class.new
-      scan_invader(invader, grid)
+      scan_invader(invader, grid, match_percentages)
     end
   end
 
   private
 
-  def scan_invader(invader, grid)
+  def scan_invader(invader, grid, match_percentages)
     @offset_columns = calculate_offset(invader.columns)
     @offset_rows = calculate_offset(invader.rows)
 
-    MATCH_PERCENTAGES.each do |match_percentage|
+    match_percentages.each do |match_percentage|
       initial_position = [-@offset_rows, -@offset_columns]
       end_position = [grid.array.length + @offset_rows, grid.array.first.length + @offset_columns]
 

@@ -106,6 +106,12 @@ Run from CLI:
 ```bash
 ruby lib/run_radar.rb spec/fixtures/official_grid.txt
 ```
+You can specify custom match percentages by adding them as a comma-separated string:
+```bash
+ruby lib/run_radar.rb spec/fixtures/official_grid.txt "90,20"
+```
+This will use 90% as the first match percentage and 20% as the second. If no percentages are provided, the following default values will be used: `90, 75, 55, 30`.
+
 
 ## Testing
 Run tests using:
