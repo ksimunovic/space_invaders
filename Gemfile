@@ -8,7 +8,7 @@ gem "logger"
 gem "ostruct"
 
 group :development do
-  gem "standard", "~> 1.42.1"
+  gem "standard", "~> 1.43.0"
 end
 
 group :development, :test do
